@@ -1,16 +1,45 @@
-# This is a sample Python script.
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def vloz(self, prvok):
+        if self.head is None:
+            self.head = prvok
+        else:
+            aktualny = self.head
+            while aktualny.next:
+                aktualny = aktualny.next
+            aktualny.next = prvok
+
+    def vloz_na_zaciatok(self, prvok):
+        prvok.next = self.head
+        self.head = prvok
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    def vypis(self):
+        aktualny = self.head
+        print(aktualny.data)
+        while aktualny.next:
+            aktualny = aktualny.next
+            print(aktualny.data)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Prvok:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+mojLinked = LinkedList()
+prvok1 = Prvok("Milan")
+mojLinked.vloz(prvok1)
+prvok2 = Prvok("Jozo")
+mojLinked.vloz(prvok2)
+prvok3 = Prvok("Fero")
+mojLinked.vloz(prvok3)
+prvok4 = Prvok("HUHU")
+
+mojLinked.vloz_na_zaciatok(prvok4)
+mojLinked.vypis()
+
+print("test")
