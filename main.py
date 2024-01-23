@@ -1,47 +1,12 @@
-class LinkedList:
-    def __init__(self):
-        self.head = None
+class Convert:
+    @staticmethod
+    def imperial(a, b):
+        return a * b
 
-    def vloz(self, prvok):
-        if self.head is None:
-            self.head = prvok
-        else:
-            aktualny = self.head
-            while aktualny.next:
-                aktualny = aktualny.next
-            aktualny.next = prvok
+    @staticmethod
+    def metric(a, b):
+        return a/b
 
-    def vloz_na_zaciatok(self, prvok):
-        prvok.next = self.head
-        self.head = prvok
-
-
-    def vypis(self):
-        aktualny = self.head
-        print(aktualny.data)
-        while aktualny.next:
-            aktualny = aktualny.next
-            print(aktualny.data)
-
-
-class Prvok:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-mojLinked = LinkedList()
-prvok1 = Prvok("Milan")
-mojLinked.vloz(prvok1)
-prvok2 = Prvok("Jozo")
-mojLinked.vloz(prvok2)
-prvok3 = Prvok("Fero")
-mojLinked.vloz(prvok3)
-prvok4 = Prvok("HUHU")
-
-mojLinked.vloz_na_zaciatok(prvok4)
-mojLinked.vypis()
-
-print("test")
-
+print(f" Convert to Imperial {Convert.imperial(5, 1.0936)}")
+print(f" Convert to Metric {Convert.metric(5, 1.0936)}")
 
