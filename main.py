@@ -43,3 +43,5 @@ mojLinked.vloz_na_zaciatok(prvok4)
 mojLinked.vypis()
 
 print("test")
+
+
